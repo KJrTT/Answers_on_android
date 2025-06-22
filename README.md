@@ -707,6 +707,12 @@ dependencies {
 *   **`startActivity()` (теперь `launch`)**: Просто запускает новую Activity. Связь однонаправленная.
 *   **`startActivityForResult()` (устарел)**: Запускал Activity и ждал от нее результат.
 
+Отличия между launch() и startActivityForResult
+Критерий	startActivityForResult	ActivityResultLauncher.launch()
+Способ регистрации	Переопределение onActivityResult()	Создание ActivityResultLauncher через registerForActivityResult()
+Типизация	Нет (данные в Intent)	Да (используются контракты, например, StartActivityForResult, TakePicture)
+Управление жизненным циклом	Может вызвать утечки, если Activity уничтожается	Автоматически управляет жизненным циклом
+Рекомендуемый подход	Устарел (Deprecated в API 30)	Современный (рекомен
 **Современный подход — Activity Result API**:
 `startActivityForResult` и `onActivityResult` были заменены на **Activity Result API**. Он более безопасен и гибок.
 
