@@ -155,7 +155,7 @@ interface UserDao {
 
 *   **`@Database`**: Аннотация для класса базы данных. В ней указываются `entities` (список классов-сущностей) и `version` (версия базы данных).
 *   **Инициализация**: База данных создается с помощью `Room.databaseBuilder()` или `Room.inMemoryDatabaseBuilder()`.
-
+* **Room.databaseBuilder** - это статический метод в библиотеке Room Persistence Library для Android, который используется для создания экземпляра RoomDatabase.
 **Пример**:
 ```kotlin
 @Database(entities = [User::class], version = 1)
